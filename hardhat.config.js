@@ -1,4 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan");
+
 require('dotenv').config()
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -31,7 +33,7 @@ if (!validLength.includes(words)) {
 }
 
 module.exports = {
-  solidity: "0.8.13",
+  solidity: "0.8.17",
   networks: {
     "local-devnode": {
       url: "http://localhost:8545",
@@ -45,5 +47,8 @@ module.exports = {
       url: 'https://alpha-1-replica-0.bedrock-goerli.optimism.io',
       accounts: { mnemonic: process.env.MNEMONIC }
     },
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_API_KEY
   }
 };

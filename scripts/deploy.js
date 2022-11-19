@@ -22,6 +22,8 @@ async function main() {
   await greeter.deployed();
 
   console.log("Greeter deployed to:", greeter.address);
+  console.log("To verify run: ");
+  console.log(`npx hardhat verify --network optimism-goerli ${greeter.address} "Hello, Hardhat\\!"`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
